@@ -10,7 +10,7 @@ Make sure pip3 and python3 installed
 6. pip3 install requests
 
 
-python3 -m uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+python3 -m uvicorn app:app --host 0.0.0.0 --port 8000 --reload (command to execute app.py in local)
 
 
-http://127.0.0.1:8000/docs#/default/upload_pdf_upload_pdf__post
+http://127.0.0.1:8000/docs#/default/upload_pdf_upload_pdf__post   (Swagger URL)
