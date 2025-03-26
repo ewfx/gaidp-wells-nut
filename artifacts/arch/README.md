@@ -1,3 +1,16 @@
-Replace this file with a document that describes the architecture and design of your solution architecture. This may include
-    - An architecture drawing exported into a png/jpeg format image
-    - A document in pdf or md format that describes your solution
+In order to run the app make sure we have the below libraries in place
+
+Make sure pip3 and python3 installed
+
+1. export HUGGINGFACE_API_KEY=your_api_key_here
+2. pip3 install "fitz[pymupdf] pandas fastapi uvicorn requests python-multipart"
+3. pip3 install pandas
+4. pip3 install fitz
+5. pip3 install fastapi
+6. pip3 install requests
+
+
+python3 -m uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+
+
+http://127.0.0.1:8000/docs#/default/upload_pdf_upload_pdf__post
