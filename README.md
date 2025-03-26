@@ -1,5 +1,5 @@
-# WellsNut team 
-## Naresh kumar, Santhosh Kumar, Sonali, Shrikanth Rao and Kiran
+## WellsNut team 
+### code Contributed by: Naresh kumar, Santhosh Kumar, Sonali, Shrikanth Rao and Kiran
 # Gen AI-Based Data Profiling System
 
 ## Overview
