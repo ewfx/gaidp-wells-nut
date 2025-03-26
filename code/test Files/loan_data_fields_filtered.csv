@@ -1,0 +1,15 @@
+field_Name,regex
+Bank Account Number,^[A-Za-z0-9-]+$
+Obligor Name (ObligorName),^[A-Za-z0-9.\- ]+$
+Outstanding Balance (OutstandingBalance),^\d+$
+Line Reported on FR Y-9C (LineReportedOnFRY9C),^[1-7]$
+Committed Exposure Global (CommittedBalance),^\d+$
+Property Type (PropertyType),^(1[0-2]|[1-9])$
+Origination Date (OriginationDate),^\d{4}-\d{2}-\d{2}$
+Loan Purpose (LoanPurpose),^(1[0-2]|[1-9])$
+Guarantor Flag (GuarantorFlag),^[1-4]$
+Guarantor Name (GuarantorName),^[A-Za-z0-9.\- ]+$
+Guarantor TIN (GuarantorTIN),^\d{9}$|^NA$
+Current Maturity Date (CurrentMaturityDate),^\d{4}-\d{2}-\d{2}$
+Outstanding Balance Par Value,^\d+$
+Leveraged Loan Flag (LeveragedLoanFlag),^[1-2]$

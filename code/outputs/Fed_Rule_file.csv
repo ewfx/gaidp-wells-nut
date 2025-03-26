@@ -1,0 +1,1565 @@
+"Field
+No.","Field Name;
+(Technical Field
+Name)",Mdrm,Description,Allowable Values,RegEx Pattern
+1,"Customer ID
+(CustomerID)",CLCOM047,"Report the unique internal identifier for the customer relationship
+under which the obligor's exposure is aggregated in the reporting
+entity's credit systems. Customer ID is a relationship concept
+under which multiple borrowers are aggregated because they have
+related risks, including, but not limited to parent/subsidiary
+relationships. For stand-alone or ultimate parent obligors, the
+Customer ID may be the same as the unique internal identifier for
+the obligor provided in Field 2.","Must not contain a carriage
+return, line feed, comma or any
+unprintable character.",^.*$
+2,"Internal ID
+(InternalObligor
+ID)",CLCOM300,"Report the reporting entity’s unique internal identifier for the
+obligor. Internal ID is a borrower concept that identifies the entity
+under which multiple loans are aggregated.","Must not contain a carriage
+return, line feed, comma or any
+unprintable character.",^.*$
+3,"Original
+Internal ID
+(OriginalInterna
+lObligorID)",CLCOG064,"Report the internal identification code assigned to the obligor in the
+previous submission. If there is no change from the prior
+submission, or if this is the first submission, the Internal ID reported
+in Field 2 should be used as the Original Internal ID.","Must not contain a carriage
+return, line feed, comma or any
+unprintable character.",^.*$
+4,"Obligor Name
+(ObligorName)",CLCO9017,"Report the obligor name on the credit facility.
+Full legal corporate name is desirable. If the borrowing entity is an
+individual(s) (Natural Person(s)), do not report the name; instead
+substitute with the text: ""Individual.""
+For fronting exposures, report legal name of the participant lender.","Must not contain a carriage
+return, line feed, comma or any
+unprintable character.",^.*$
+5,"City
+(City)",CLCO9130,"Report the name of the city in which the obligor is domiciled (as
+defined in the FR Y-9C Glossary entry for “domicile”).","Free text indicating the City
+where the Obligor is domiciled.",^.*$
+6,"Country
+(Country)",CLCO9031,"Report the domicile of the obligor (as defined in the FR Y-9C
+Glossary entry for “domicile”).",Use the 2 letter Country Code22,^.*$
+7,"Zip Code
+(ZipCodeForeign
+MailingCode)",CLCO9220,"Report the five-digit zip code for locations within the 50 US states,
+Washington DC, Puerto Rico, the US Virgin Islands, Guam, Palau,
+Micronesia, the Northern Marianas, or the Marshall Islands. For all
+other locations report the foreign mailing code for the domicile of
+the obligor (as defined in the FR Y-9C Glossary entry for “domicile”).","For locations within the 50 US
+states, Washington DC, Puerto
+Rico, the US Virgin Islands,
+Guam, Palau, Micronesia, the
+Northern Marianas, or the
+Marshall Islands: five-digit ZIP
+code. If the ZIP code begins with
+zeroes, leading zeroes must be
+specified with no punctuation.
+For International: use country
+specific postal code.",^\d{5}(?:-\d{4})?$
+8,"Industry Code
+(IndustryCode)",CLCO4537,"Report the numeric code that describes the primary business
+activity of the obligor according to the North American Industry
+Classification System (NAICS). If the NAICS code is not available,
+provide either the Standard Industrial Classification (SIC), or Global
+Industry Classification Standard (GICS).
+If the obligor is an individual, the industry code should be
+consistent with the industry in which the commercial purpose of
+the loan operates.
+If the business or individual operates in multiple industries, the
+BHC or IHC or SLHC should report the industry that best represents
+the commercial risk of the loan (i.e., the predominant industry).","Report 4 to 6 digit number. If
+this code is not available, then
+provide a SIC or GICS industry
+code.",^\d+$
+9,"Industry Code
+Type
+(IndustryCodeTy
+pe)",CLCOM297,"Select the type of industry code identification scheme used in Field
+8.","1. NAICS
+2. SIC
+3. GICS",^.*$
+10,"Obligor Internal
+Risk Rating
+(InternalRating)",CLCOG080,"Report the obligor rating grade from the reporting entity’s internal
+risk rating system. For fronting exposures, report the participant
+lender’s rating grade from the reporting entity’s internal risk rating
+system.
+This is the reporting entity’s probability of default (PD) rating. If the
+reporting entity uses a one-dimensional risk rating system, record
+that rating here.","Free text indicating the obligor
+rating grade.
+Obligor Internal Risk Rating
+must be consistent with
+Schedule H.4 (Internal Risk
+Rating Schedule), Field 1.",^.*$
+11,"TIN
+(TIN)",CLCO6191,"Report the Taxpayer Identification Number (TIN) assigned to the
+obligor by the U.S. Internal Revenue Service (IRS) in the
+administration of tax laws. If the borrowing entity is an
+individual(s) (Natural Person(s)), do not report Social Security
+Number; instead enter ‘NA’. If, the borrowing entity does not have a
+TIN, enter ‘NA’.","The 9 digit identification
+assigned by the Internal
+Revenue Service for the obligor
+identified in field 2.
+Allowable forms are either
+##-#######, #########, or
+‘NA’.",^.*$
+12,"Stock
+Exchange
+(StockExchange)",CLCO4534,"Report the name of the Stock Exchange on which the primary stock
+of the obligor, or its parent, trades. If the borrowing entity is not
+publicly traded, enter ‘NA’. In cases where the subsidiary is the
+obligor and the subsidiary is publicly traded, report the Stock
+Exchange and Ticker Symbol (field #13) of the subsidiary,
+regardless of ownership structure. If the subsidiary is not publicly
+traded, but its parent is, report the stock exchange and ticker
+symbol of the parent. Report in the same manner when the
+subsidiary is minority owned.",Free text,^.*$
+13,"Ticker Symbol
+(TKR)",CLCO4539,"Report the Stock Symbol for stocks listed and traded on the
+regulated exchange provided in Field 12. For subsidiaries of public
+companies, use parent ticker symbol from its primary Stock
+Exchange. If the borrowing entity is not publicly traded, enter ‘NA’.
+In cases where the subsidiary is the obligor and the subsidiary is
+publicly traded, report the Stock Exchange (field #12) and Ticker
+Symbol of the subsidiary, regardless of ownership structure. If the
+subsidiary is not publicly traded, but its parent is, report the stock
+exchange and ticker symbol of the parent. Report in the same
+manner when the subsidiary is minority owned.",Free text,^.*$
+14,"CUSIP
+(CUSIP)",CLCO9161,"Report the CUSIP of the obligor, if available. CUSIPs are identifiers
+created and delivered by the CSB (CUSIP Service Bureau). The CSB
+is managed on behalf of the American Bankers Association by
+Standard & Poor’s. Issuer codes are assigned alphabetically from a
+series that includes deliberate built-in “gaps” for future expansion.
+Report the first six characters which are known as the base (or
+CUSIP-6) and uniquely identify the issuer. If a CUSIP does not apply,
+enter ‘NA’.","Must be valid 6 digit CUSIP
+number issued by the CUSIP
+Service Bureau.",^\d+$
+15,"Internal
+Credit Facility
+ID
+(InternalCreditF
+acilityID)",CLCOM142,"Report the reporting entity’s unique internal identifier for this
+credit facility record. It must identify the credit facility for its entire
+life and must be unique.
+In the event the internal facility ID changes (i.e., loan was converted
+to a new system through migration or acquisition), also provide
+Original Internal credit facility ID in Field 16.
+For fronting exposures, report the unique internal identifier
+assigned to the participant lender’s fronting allocation.","Must be unique within a
+submission and over time. That
+is, the same submission file
+must not have two facilities
+with the same Credit Facility ID.
+May not contain a carriage
+return, line feed, comma or any
+unprintable character.",^.*$
+16,"Original Internal
+Credit Facility
+ID
+(OriginalInternal
+CreditFacilityID)",CLCOM296,"Report the Internal identification code assigned to the credit facility
+record in the previous submission. If the credit facility represents
+the fulfillment of a commitment to commit or a syndicated pipeline
+loan reported in the previous submission, report the credit facility
+ID used for that formerly reported exposure. If there is no change
+from the prior submission, or if this is the first submission, then the
+Internal credit facility ID reported in Field 15 should be used as the
+Original Internal credit facility ID.
+For disposed credit facilities, where the reason for the disposal is
+rebookings/restructures where loan amounts are transferred or
+combined between obligations, report the ID separated by a ,
+(comma).","May not contain a carriage
+return, line feed, or any
+unprintable character.
+Provide the ID separated by a ,
+(comma). For example, if
+facilities 123 and XYZ are
+aggregated into facility ABC
+then the ""Unique ID"" (H.1
+Internal Credit Facility ID Field
+15, H.2 Loan Number Field 1) is
+reported as ABC and the
+""Original ID"" (H.1 Original
+Internal Credit Facility ID Field
+16, H.2 Original/Previous Loan
+Number Field 35) is reported
+as 123, XYZ.",^\d+$
+17,DO NOT USE,,,,^.*$
+18,"Origination
+Date
+(OriginationDate
+)",CLCO9912,"Report the origination date. The origination date is the contractual
+date of the credit agreement. (In most cases, this is the date the
+commitment to lend becomes a legally binding commitment). If
+there has been a major modification to the loan such that the
+obligor executes a new or amended and restated credit agreement,
+use the revised contractual date of the credit agreement as the
+origination date. The following independent examples would
+generally not result in a change in the contractual date of the loan,
+and thus would not be considered major modifications: (1)
+extension options at the sole discretion of the borrower; (2)
+covenants; (3) waivers; (4) change in the maturity date; (5) re-
+pricing; or (6) periodic credit reviews. Additionally, exclude all
+renewals which meet the definition in the ‘Renewal Date’ Field 91.
+For corporate loans and leases in the syndicated pipeline, report
+the date on which the BHC or IHC or SLHC has extended terms to
+the borrower in the signed commitment letter (option 1 in field
+100). Once the deal is reported as closed and settled (option 4 in
+Field 100), report the updated origination date per the definition
+above.
+For commitments to commit which are not syndicated, report the
+date on which the BHC or IHC or SLHC extended terms to the
+borrower.","Must be in yyyy- mm-dd format,
+e.g.:
+2005-02-01
+1999-12-14
+Must be before or equal to the
+period end date of the data.",^\d{4}-\d{2}-\d{2}$
+19,"Maturity Date
+(MaturityDate)",CLCO9914,"Report the maturity date. The maturity date is the last date upon
+which the funds must be repaid, inclusive of extension options that
+are solely at the borrower’s discretion, and according to the most
+recent terms of the credit agreement. If extension options are
+conditional on certain terms being met, such extensions should be
+considered to be at the sole discretion of the borrower. For
+demand loan, enter ‘9999-01-01’.For corporate loans in the
+syndicated pipeline, until the syndicated loan is reported as closed
+and settled (option4 in Field 100), report the estimated maturity
+date based on the tenor stated in the commitment letter.
+For commitments to commit which are not syndicated, report the
+estimated maturity date based on the tenor in the terms extended
+to the borrower.","Must be in yyyy- mm-dd format,
+e.g.:
+2005-02-01
+1999-12-14",^.*$
+20,"Credit Facility
+Type
+(FacilityType)",CLCOG072,"Report the credit facility type. Use the following credit facility type
+descriptions, only. Note that these descriptions and codes mirror
+the requirements for Shared National Credit reporting and
+therefore not all will be relevant for Corporate Loan reporting. If the
+Credit facility type is “Other,” provide description in Field 21.
+0 OTHER
+1 REVOLVING CREDIT
+2 REVOLVING CREDIT CONVERTING TO TERM LOAN
+3 REVOLVING CREDIT - ASSET BASED
+4 REVOLVING CREDIT – DIP (Debtor-In-Possession)
+5 NON-REVOLVING LINE OF CREDIT
+6 NON-REVOLVING LINE OF CREDIT CONVERTING TO TERM
+LOAN
+7 TERM LOAN
+8 TERM LOAN – A
+9 TERM LOAN – B
+10 TERM LOAN – C
+11 TERM LOAN – BRIDGE
+12 TERM LOAN - ASSET BASED
+13 TERM LOAN – DIP (Debtor-In-Possession)
+14 CAPITALIZED LEASE OBLIGATION
+15 STANDBY LETTER OF CREDIT
+16 OTHER REAL ESTATE OWNED
+17 OTHER ASSET
+18 FRONTING EXPOSURE
+19 COMMITMENT TO COMMIT","Enter number code of the
+description.",^\d+$
+21,"Other Credit
+Facility Type
+Description
+(OtherFacilityTy
+pe)",CLCOG107,"If the credit facility is listed as “Other” in Field 20, provide a
+description of the “other credit facility type.” Leave this field blank
+if Field 20 is not zero.",Free Text,^.*$
+,,,"22 REAL ESTATE INVESTMENT/PERMANENT FINANCING -
+COMMERCIAL AND INDUSTRIAL
+23 BUSINESS RECAPITALIZATION/DIVIDENDS
+24 NEW PRODUCT DEVELOPMENT
+25 PROJECT FINANCING
+26 DEALER FLOORPLAN
+27 EQUIPMENT LEASING
+28 NON-PURPOSE LOAN COLLATERALIZED BY SECURITIES
+29 BRIDGE FINANCING
+30 CAPITAL CALL SUBSCRIPTION
+31 DO NOT USE
+32 DO NOT USE
+33 DO NOT USE",,^.*$
+23,"Other Credit
+Facility Purpose
+Description
+(OtherFacilityPu
+rpose)",CLCOG108,"If the credit facility purpose is listed as “Other” in Field 22,
+provide a description of the “other credit facility type.” Leave this
+field blank if Field 22 is not zero.",Free Text,^.*$
+24,"Committed
+Exposure Global
+23
+(CommittedExpo
+sure)",CLCOG074,"Report the total commitment amount as the sum of loan and lease
+financing receivables recorded in FR Y-9C, Schedule HC-C
+(reported in Field 25) and any unused portion of the commitment
+recorded in Schedules HC-F, HC-G, and HC-L.
+Report the total commitment amount and not the constrained
+commitment amount. For example, if the borrower has a contract
+for $1.1 million total commitment, but is constrained by
+borrowing base to $900 thousand, report the total commitment
+amount of $1.1 million.
+For facilities with multiple lenders, only provide the reporting
+entity’s pro-rata commitment, net of the above noted adjustments.
+For corporate loans and leases in the syndicated pipeline,
+reported as options 1 (single-signed), 2 (dual-signed) or 3 (closed
+but not settled) in Field 100, report the total commitment amount
+approved and stated in the commitment letter.
+For commitments to commit which are not syndicated, report the
+total commitment amount approved and offered to the borrower.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+25,"Utilized Exposure
+Global 24
+(UtilizedExposur
+e)",CLCOG075,"Report all loan and lease financing receivables consistent with the
+FR Y-9C instructions. Report the amortized cost for HFI loans and
+the lower of cost or fair value for HFS loans. Report at fair value all
+HFS and HFI loans that the firm has elected to report under a fair
+value option.
+For facilities with multiple lenders, only provide the reporting
+entity’s pro-rata utilized exposure, net of the above noted
+adjustments.
+For fully undrawn commitments, enter
+0 (zero).
+For fronting exposures, report any funds advanced to the borrower
+on behalf of the participant lender as identified in field 4 (Obligor
+Name).
+For disposed credit facilities, report 0 (zero).","Rounded whole dollar amount
+with no cents, e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+26,"Line Reported
+on FR Y-9C
+(LineReportedOn
+FRY9C)",CLCOK449,"Report the integer code corresponding to the line number on the
+FR Y-9C, Schedule HC-C, in which the outstanding balance is
+recorded or, in the case of an unused commitment, the line
+number in which the credit facility would be recorded if it were
+drawn. Refer to the FR Y-9C instructions for definitions of
+Schedule HC-C line item categories.
+If the credit facility includes multiple loans, report the integer
+code corresponding to the type of loan which accounts for the
+largest share of the credit facility committed balance.
+For fronting exposures, report the integer code corresponding
+to the line number on the HC-C in which the exposure would be
+recorded if it were drawn by the borrower.
+1. Loans to U.S. banks and other U.S. depository institutions (FR Y-
+9C, Schedule HC-C, item 2.a);
+2. Loans to foreign banks (FR Y-9C, Schedule HC-C, item 2.b);
+3. Loans to finance agricultural production and other loans to
+farmers (FR Y-9C, Schedule HC-C, item 3);
+4. Commercial and industrial loans to U.S. addresses (FR Y-9C,
+Schedule HC-C, item 4.a);
+5. Commercial and industrial loans to non-U.S. addresses (FR Y-9C,
+Schedule HC-C, item 4.b);
+6. Loans to foreign governments and official institutions (including
+foreign central banks) (FR Y-9C, Schedule HC-C, item 7);
+7. Loans to nondepository financial institutions (FR Y-9C, Schedule
+HC-C, item 9.a);
+8. All other loans, excluding consumer loans (FR Y-9C, Schedule HC-
+C, item 9.b(2));","Enter number code of the
+description",^\d+$
+,,,"9. All other leases, excluding consumer leases (FR Y-9C, Schedule
+HC-C, item 10.b);
+10. Loans secured by owner-occupied nonfarm nonresidential
+properties originated in domestic offices (FR Y-9C, Schedule HC-
+C, item 1.e(1)); and
+11. Loans secured by owner-occupied nonfarm nonresidential
+properties originated in non-domestic offices (reported within FR
+Y-9C, Schedule HC-C, item 1).",,^.*$
+27,"Line of Business
+(LineOfBusiness)",CLCOK458,Provide the name of the internal line of business,"Free text describing the line of
+business. For example: Private
+Banking, Corporate Banking,
+Asset- Based Lending, etc.
+Must be consistent with line of
+business names as reported in
+Schedule H.3 (Line of Business
+Schedule), Field 1.",^.*$
+28,"Cumulative
+Charge-offs
+(CumulativeChar
+geoffs)",CLCOG076,"Report the cumulative net charge-offs associated with the credit
+facility on the reporting entity's books.
+Cumulative net charge-offs are the amount reflected over the life of
+the credit facility.
+If cumulative charge-offs are greater than the current commitment
+balance but less than the original commitment, report the total
+cumulative charge-off amount even though it exceeds the current
+commitment.
+For disposed credit facilities, report the cumulative charge-offs as
+of the date of disposition.
+For fronting exposures, report the cumulative net charge-offs
+associated with impairment of the participant lender.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).
+Should be 0 if there is no
+charge-off for the facility.
+Should be ‘NA’ for loans held for
+sale or accounted for under a
+fair value option.",^.*$
+29,DO NOT USE,,,,^.*$
+30,DO NOT USE,,,,^.*$
+31,DO NOT USE,,,,^.*$
+32,"# Days Principal
+or Interest Past
+Due
+(PastDue)",CLCOG077,"Report the longest number of days principal and/or interest
+payments are past due, if such payments are past due 30 days or
+more. Report the number of days past due as of the last day of the
+reporting period or disposition date. If payments are not past due
+30 days or more, enter zero. For fronting exposures, report the
+longest number of days principal and/or interest payments are
+past due, if such payments are past due 30 days or more for the
+participant lender.","Numbers only.
+For fully undrawn
+commitments, enter 0.",^\d+$
+33,"Non-Accrual
+Date
+(NonAccrualDat
+e)",CLCOG078,"Report the date the credit facility was placed on non-accrual, if
+applicable. If a non-accrual date does not exist, enter 9999-12-31.
+For fronting exposures, report the date the fronting facility was
+placed on non-accrual.","Must be in yyyy- mm-dd format,
+e.g.:
+2005-02-01
+1999-12-14
+For fully undrawn
+commitments, enter 9999-12-
+31.",^.*$
+34,"Participation
+Flag
+(ParticipationFla
+g)",CLCO6135,"Indicate if the credit facility is participated or syndicated among
+other financial institutions and if it is part of the Shared National
+Credit Program. For fronting exposures, report option1 ‘No”.","1. No
+2. Yes, syndicate/participant in
+syndication but does not
+meet the definition of a
+Shared National Credit
+3. Yes, agent in syndication or
+participation but does not
+meet the definition of a
+Shared National Credit
+4. Yes, syndicate/participant
+in Shared National Credit
+5. Yes, agent in Shared
+National Credit",^.*$
+35,"Lien Position
+(LienPosition)",CLCOK450,"Indicate using integer code if the credit facility is First Lien Senior,
+Second Lien, Senior Unsecured, or Contractually Subordinated.
+If the facility contains loans with different lien positions,
+aggregate the committed balance by lien position and report the
+lien position associated with the predominant aggregate value.
+For fronting exposures, report the integer code that is applicable
+for the primary credit facility.","1. First-Lien Senior
+2. Second Lien
+3. Senior Unsecured
+4. Contractually Subordinated",^.*$
+36,"Security Type
+(SecurityType)",CLCOM298,"If security is provided by collateral other than or in addition to
+Real Estate, indicate the predominant security type. If a credit
+facility has loans secured by different asset types, aggregate the
+committed balance by type of asset in the collateral pool and
+report the security type associated with the predominant
+aggregate value. Report the integer code corresponding to the
+following security type descriptions.
+Option 4 (Blanket Lien) should only be used for loans which
+legally give the lender a lien of equal seniority across all
+unencumbered assets of the borrower.
+For fronting exposures, report the integer code that is applicable
+for the primary credit facility.
+0 Real Estate only
+1 Cash and Marketable Securities
+2 Accounts Receivable and Inventory
+3 Fixed Assets excluding Real Estate
+4 Blanket Lien
+5 Other
+6 Unsecured","Enter number code of the
+description",^\d+$
+37,"Interest Rate
+Variability
+(InterestRateVar
+iability)",CLCOK461,"Indicate the variability of current interest rates (Fixed, Floating, or
+Mixed) to maturity.
+For fully undrawn commitments, report interest rate variability that
+would apply per the terms of the credit agreement if the credit
+facility was funded and fully drawn on the reporting date. If such
+fully undrawn credit facility allows for either fixed or floating draws
+at the borrower’s discretion, then report ‘3’ (Mixed).
+For facilities where revenue is entirely fee based and no interest is
+or will ever be collected, enter ‘4’ (Entirely fee based).
+For fronting exposures, indicate the variability of current interest
+rates (Fixed, Floating, Mixed, or Entirely fee based) to maturity
+based on the rate associated with the fronting facility.","0. DO NOT USE
+1. Fixed
+2. Floating
+3. Mixed
+4. Entirely fee based",^.*$
+,"(InterestRateInd
+ex)",,"If the credit facility is fixed or entirely fee based (as designated in
+Field 37) choose the integer for “Not applicable (Fixed or entirely
+fee based)”. For credit facilities where the base interest rate is
+mixed, choose the integer for “Mixed.”
+For fully undrawn commitments, report the interest rate index that
+would apply if the credit facility was funded and fully drawn on the
+reporting date. If such fully undrawn credit facility allows for
+multiple indices at the borrower’s discretion, then report the
+interest rate index used to calculate Field 38 (Interest Rate).
+For fronting exposures, report this field based on the rate
+associated with the fronting facility.","2. PRIME or Base
+3. Treasury Index
+4. Other
+5. Not applicable
+(Fixed or entirely fee based)
+6. Mixed
+7. SOFR",^.*$
+40,"Interest Rate
+Spread
+(InterestRateSpr
+ead)",CLCOK463,"For floating rate credit facilities, report the spread over base rate in
+basis points.
+If the credit facility is fixed or entirely fee based (as designated in
+Field 37) populate ‘NA’.
+If the facility includes multiple draws with different spreads,
+provide the spread that approximates the overall spread on the
+facility.
+For fully undrawn commitments, report the interest rate spread
+that would apply per the terms of the credit agreement if the credit
+facility was funded and fully drawn on the reporting date.
+For fronting exposures, report the interest rate spread based on the
+rate associated with the fronting facility.","Provide as a decimal, e.g.:
+0.0575 for 5.75%
+Enter ‘NA’ if the credit facility is
+fixed or entirely fee based
+Negative numbers can be
+submitted. For negative values
+use a negative sign
+‘-‘ not parenthesis ().",^\d+$
+41,"Interest Rate
+Ceiling
+(InterestRateCeil
+ing)",CLCOK464,"For floating rate credit facilities, report the rate ceiling if one is
+contained in the credit agreement.
+If there is no ceiling, populate with ‘NONE’.
+If the credit facility is fixed or entirely fee based (as designated in
+Field 37) populate ‘NA’.
+For facilities with multiple interest rate ceilings, provide the
+maximum interest rate ceiling.
+For fully undrawn commitments, report the interest rate ceiling that
+would apply per the terms of the credit agreement if the credit
+facility was funded and fully drawn on the reporting date.
+For fronting exposures, report the interest rate ceiling based on the
+rate associated with the fronting facility.","Provide as a decimal, e.g.:
+0.0575 for 5.75%
+Enter ‘NA’ if the credit facility is
+fixed or entirely fee based
+Enter ‘NONE’ if no ceiling.",^.*$
+42,"Interest Rate
+Floor
+(InterestRateFlo
+or)",CLCOK465,"For floating rate credit facilities, report the rate floor if one is
+contained in the credit agreement. If there is no floor, populate with
+‘NONE’.
+If the credit facility is fixed or entirely fee based (as designated in
+Field 37) populate ‘NA’.
+For facilities with multiple interest rate floors, provide the
+minimum interest rate floor.
+For fully undrawn commitments, report the interest rate floor that
+would apply per the terms of the credit agreement if the credit
+facility was funded and fully drawn on the reporting date.
+For fronting exposures, report the interest rate floor based on the
+rate associated with the fronting facility.","Provide as a decimal, e.g.:
+0.0575 for 5.75% Enter ’NA’ if
+the credit facility is fixed or
+entirely fee based
+Enter ‘NONE’ if no floor.",^.*$
+43,"Interest Income
+Tax Status
+(TaxStatus)",CLCOM299,"Report the tax status of interest income for Federal or State Income
+Tax purposes. Interest Income Tax Status should be determined by
+whether the interest income received by the BHC or IHC or SLHC is
+tax exempt (at Federal, State, etc.).","1. Taxable
+2. Tax Exempt
+If federal or state tax exempt,
+choose ’2’.",^.*$
+44,"Guarantor Flag
+(GuarantorFlag)",CLCGM318,"Indicate if the credit facility is guaranteed.
+Report the option that reflects the guarantee of the guarantor
+identified in Field 45.
+Option 1 (Full guarantee) should be selected when there is explicit
+recourse for full repayment of the credit obligation by a single
+guarantor other than a U.S. Government Agency. For credit
+facilities fully guaranteed by a U.S. Government Agency, refer to the
+definition for option 3.
+Option 2 (Partial guarantee) should be selected when there is
+explicit recourse for repayment of a portion of the credit
+obligation. This option includes partial guarantees by a U.S.
+Government Agency.
+Option 3 (Full U.S. Government Agency guarantee) should only be
+selected when the credit facility is fully guaranteed by a U.S.
+Government Agency.
+Option 4 (No guarantee) should be used when there is no explicit
+recourse for repayment of the credit obligation.
+For fronting exposures, report the integer code that is applicable
+for the primary facility.","1. Full guarantee
+2. Partial guarantee
+3. U.S. Government Agency
+Guarantee
+4. No guarantee",^.*$
+45,"Guarantor
+Internal ID
+(GuarantorInter
+nalID)",CLCGM300,"Report the unique guarantor identifier.
+For facilities with multiple guarantors, provide the unique
+guarantor identifier for the primary or most substantial guarantor.","Must not contain a carriage
+return, line feed, comma or any
+unprintable character.
+If the credit facility is not
+guaranteed, enter ‘NA’.",^.*$
+46,"Guarantor Name
+(GuarantorNam
+e)",CLCG9017,"Report the guarantor name on the credit facility. Full legal
+corporate name is desirable. If the guarantor is an individual(s)
+(Natural Person (s)), do not report the name; instead substitute
+with the text: ""Individual.""
+For facilities with multiple guarantors, provide the guarantor name
+for the primary or most substantial guarantor.","Must not contain a carriage
+return, line feed, comma or any
+unprintable character.
+If the credit facility
+is not guaranteed, enter ‘NA’",^.*$
+47,"Guarantor TIN
+(GuarantorTIN)",CLCG6191,"Report the Taxpayer Identification Number (TIN) assigned to the
+guarantor by the U.S. Internal Revenue Service (IRS) in the
+administration of tax laws. If the guarantor is an individual(s)
+(Natural Person(s)), do not report Social Security Number; instead
+enter ‘NA’. If, the guarantor does not have a TIN, enter ‘NA’.
+For facilities with multiple guarantors, provide the TIN assigned to
+the primary or most substantial guarantor.","The 9 digit identification
+assigned by the Internal
+Revenue Service for the
+guarantor identified in Field
+45. Allowable forms are either
+##-#######,
+#########, or
+‘NA’.
+If the credit facility
+is not guaranteed, enter ‘NA’",^.*$
+48,"Guarantor
+Internal Risk
+Rating
+(GuarantorInter
+nalRiskRating)",CLCGG080,"Report the guarantor rating grade from the reporting entity’s
+internal risk rating system.
+This is the reporting entity’s probability of default (PD) rating. If the
+reporting entity uses a one-dimensional risk rating system, record
+that rating here.
+For facilities with multiple guarantors, provide the guarantor rating
+grade for the primary or most substantial guarantor.","Free text indicating the obligor
+rating grade.
+If the credit facility is not
+guaranteed or if the guarantor
+does not have a rating, enter
+‘NA’",^.*$
+49,"Entity Internal
+ID
+(EntityInternalI
+D)",CLCEM300,"Report the reporting BHC’s or IHC’s or SLHC’s unique internal
+identifier for the entity that is the primary source of repayment for
+the facility in Field 15","Must not contain a carriage
+return, line feed, comma or any
+unprintable character.
+Leave blank if the entity is the
+same as the Obligor identified
+in Field 2.",^.*$
+50,"Entity Name
+(EntityName)",CLCE9017,"Report the name of the entity that is the primary source of
+repayment for the facility in Field 15. Full legal corporate name is
+desirable. If the entity is an individual(s) (Natural Person(s)), do
+not report the name; instead substitute with the text: ""Individual.""","Must not contain a carriage
+return, line feed, comma or any
+unprintable character.
+Leave blank if the entity is the
+same as the Obligor identified
+in Field 2.",^.*$
+51,"Entity Internal
+Risk Rating
+(EntityInternalRi
+skRating)",CLCEG080,"For the entity identified in Field 49, report the entity rating grade
+from the reporting BHC’s or IHC’s or SLHC’s internal risk rating
+system.
+This is the reporting entity’s probability of default (PD) rating. If the
+reporting BHC or IHC or SLHC uses a one-dimensional risk rating
+system, record that rating here.","Free text indicating the entity
+rating grade.
+Leave blank if the entity is the
+same as the Obligor identified
+in Field 2.",^.*$
+52,"Date of
+Financials
+(DateFinancials)",CLCE9999,"Report the as of date of the financial information, related to the
+entity identified in Field 2 or Field 49, that is reported in the Obligor
+Financial Data Section.","Must be in yyyy- mm-dd format,
+e.g.:
+2005-02-01
+1999-12-14",^.*$
+53,"Date of Last
+Audit
+(DateLastAudit)",CLCE4929,"Report the date of the last audited financial statements of the entity
+identified in Field 2 or Field 49. Date of last audit may or may not
+be the same date as the date of the financials (Field 52).
+If there is no audit date, enter 9999-12-31.","Must be in yyyy- mm-dd format,
+e.g.:
+2005-02-01
+1999-12-14",^.*$
+54,"Net Sales
+Current
+(NetSalesCurrent
+)",CLCEM301,"Report the gross sales of the entity identified in Field 2 or Field 49
+reduced by cash discounts, trade discounts, and returned sales and
+allowances for which credit is given to customers less returns and
+allowances, freight out, and cash discounts allowed for the
+designated period.
+Report data for the trailing twelve month (TTM) period ended on
+the date reported in Field 52.","Rounded whole dollar amount,
+e.g.:
+20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+55,"Net Sales Prior
+Year
+(NetSalesPriorYe
+ar)",CLCEM302,"Report the gross sales of the entity identified in Field 2 or Field 49
+reduced by cash discounts, trade discounts, and returned sales and
+allowances for which credit is given to customers less returns and
+allowances, freight out, and cash discounts allowed.
+Report data for the trailing twelve month (TTM) period ended one
+year prior to the date reported in Field 52.","Rounded whole dollar amount,
+e.g.:
+20000000
+Supply numeric values without
+any non-numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+56,"Operating
+Income
+(OperatingIncom
+e)",,"Report the amount of profit (or loss) realized from continuing
+operations of the entity identified in Field 2 or Field 49; typically
+represented as sales less items such as cost of goods sold, operating
+expenses, amortization and depreciation.
+Report data for the trailing twelve month (TTM) period ended on
+the date reported in Field 52.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non-numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+57,"Depreciation &
+Amortization
+(DepreciationAm
+ortization)",,"Report the total depreciation and amortization costs of the entity
+identified in Field 2 or Field 49 of tangible and intangible assets
+allocated against revenue for the current period.
+Report data for the trailing twelve month (TTM) period ended on
+the date reported in Field 52.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non-numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+58,"Interest Expense
+(InterestExpense
+)",CLCEM305,"Report the periodic expense to the entity identified in Field 2 or
+Field 49 of securing short and long-term debt.
+Report data for the trailing twelve month (TTM) period ended on
+the date reported in Field 52.","Rounded whole dollar amount,
+e.g.:
+20000000
+Supply numeric values without
+any non-numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+59,"Net Income
+Current
+(NetIncomeCurr
+ent)",CLCEM306,"Report the income (or loss) reported by the entity identified in Field
+2 or Field 49 after expenses and losses have been subtracted from
+all revenues and gains for the fiscal period including discontinued
+operations.
+Report data for the trailing twelve month (TTM) period ended on
+the date reported in Field 52.","Rounded whole dollar amount,
+e.g.:
+20000000
+Supply numeric values without
+any non-numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+60,"Net Income
+Prior Year
+(NetIncomePrior
+Year)",CLCEM307,"Report the income (or loss) reported by the entity identified in Field
+2 or Field 49 after expenses and losses have been subtracted from
+all revenues and gains for the fiscal period including discontinued
+operations.
+Report data for the trailing twelve month (TTM) period ended one
+year prior to the date reported in Field 52.","Rounded whole dollar amount,
+e.g.:
+20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+61,"Cash &
+Marketable
+Securities
+(CashMarketable
+Securities)",CLCEM308,"Report the cash, depository accounts and marketable securities of
+the entity identified in Field 2 or Field 49 that can be easily sold and
+readily converted into cash.","Rounded whole dollar amount,
+e.g.:
+20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+62,"Accounts
+Receivable
+(A/R) Current
+(AccountsReceiv
+ableCurrent)",CLCEM309,"Report the money owed to the entity identified in Field 2 or Field
+49 for merchandise or services or services sold on open account.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+63,"Accounts
+Receivable
+(A/R) Prior Year
+(AccountsReceiv
+ablePriorYear)",CLCEM310,"Report the money owed to the entity identified in Field 2 or Field
+49 for merchandise or services or services sold on open account.
+Report data one year prior to date reported in Field 52.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+64,"Inventory
+Current
+(InventoryCurre
+nt)",CLCEM311,"Report the value of the raw materials, work in process, supplies
+used in operations, finished goods, and merchandise bought for
+resale of the entity identified in Field 2 or Field 49.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+65,"Inventory Prior
+Year
+(InventoryPriorY
+ear)",CLCEM312,"Report the value of the raw materials, work in process, supplies
+used in operations, finished goods, and merchandise bought for
+resale of the entity identified in Field 2 or Field 49
+Report data one year prior to date reported in Field 52.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+66,"Current Assets
+Current
+(CurrentAssetsCu
+rrent)",CLCEM313,"Report the cash, accounts receivable, inventory, and other assets
+of the entity identified in Field 2 or Field 49 that are likely to be
+converted into cash, sold, exchanged, or expensed in the normal
+course of business, usually within one year and other assets
+expected to be converted to cash within a year. Examples include
+accounts receivable, prepaid expenses, and many negotiable
+securities as of the date reported in Field 52.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+67,"Current Assets
+Prior Year
+(CurrentAssetsPr
+iorYear)",CLCEM314,"Report the cash, accounts receivable, inventory, and other assets
+of the entity identified in Field 2 or Field 49 that are likely to be
+converted into cash, sold, exchanged, or expensed in the normal
+course of business, usually within one year and other assets
+expected to be converted to cash within a year. Examples include
+accounts receivable, prepaid expenses, and many negotiable
+securities.
+Report data one year prior to the date reported in Field 52.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+68,"Tangible Assets
+(TangibleAssets)",CLCEM315,"Report the assets of the entity identified in Field 2 or Field 49
+having a physical existence, such as cash, equipment, real estate,
+real property, and personal property such as buildings and
+machinery; accounts receivable are also usually considered
+tangible assets for accounting purposes. Tangible assets are
+distinguished from intangible assets, such as trademarks,
+copyrights, and goodwill, and natural resources (timberlands, oil
+reserves, and coal deposits).","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+69,"Fixed Assets
+(FixedAssets)",CLCEM316,"Report the tangible property of the entity identified in Field 2 or
+Field 49 used in the business and not for resale. This includes, but
+is not limited to, buildings, furniture, fixtures, equipment, and land.
+Report fixed assets net of depreciation.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+70,"Total Assets
+(TA) Current
+(TotalAssetsCurr
+ent)",CLCE2170,"Report the sum of the current assets of the entity identified in
+Field 2 or Field 49 plus net property, plant, and equipment plus
+other non-current assets (including, but not limited to, intangible
+assets, deferred items, and investments and advances) as of the
+date reported in Field 52.","Rounded whole dollar amount,
+e.g.:
+20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+71,"Total Assets
+(TA) Prior Year
+(TotalAssetsPrio
+rYear)",CLCEM317,"Report the sum of the current assets of the entity identified in
+Field 2 or Field 49 plus net property, plant, and equipment plus
+other non-current assets (including, but not limited to, intangible
+assets, deferred items, and investments and advances).
+Report data one year prior to date reported in Field 52.","Rounded whole dollar amount,
+e.g.:20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+72,"Accounts
+Payable (A/P)
+Current
+(AccountsPayabl
+eCurrent)",CLCE3066,"Report the obligations owed to the creditors of the entity
+identified in Field 2 or Field 49 arising from the entity’s ongoing
+operations, including the purchase of goods, materials, supplies,
+and services as of the date reported in Field 52.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+73,"Accounts
+Payable (A/P)
+Prior Year
+(AccountsPayabl
+ePriorYear)",CLCEM325,"Report the obligations owed to the creditors of the entity
+identified in Field 2 or Field 49 arising from the entity’s ongoing
+operations, including the purchase of goods, materials, supplies,
+and services.
+Report data one year prior to date reported in Field 52.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+74,"Short Term Debt
+(ShortTermDebt
+)",CLCEM319,"Report the debt obligations of the entity identified in Field 2 or
+Field 49 with a term of less than one year.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+75,"Current
+Maturities of
+Long Term Debt
+(CurrentMaturiti
+esLongTermDebt
+)",CLCEM320,"Report the portion of long-term debt of the entity identified in
+Field 2 or Field 49 due within one year.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+76,"Current
+Liabilities
+Current
+(CurrentLiabiliti
+esCurrent)",CLCEM321,"Report the short-term debt, accounts payable and other current
+liabilities of the entity identified in Field 2 or Field 49 that are due
+within one year.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+77,"Current
+Liabilities Prior
+Year
+(CurrentLiabiliti
+esPriorYear)",CLCEM322,"Report the short-term debt, accounts payable and other current
+liabilities of the entity identified in Field 2 or Field 49 that are due
+within one year.
+Report data one year prior to date reported in Field 52.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+78,"Long Term Debt
+(LongTermDebt)",CLCEM323,"Report the liabilities of the entity identified in Field 2 or Field 49
+that are due in one year or more.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+79,"Minority
+Interest
+(MinorityInteres
+t)",CLCE4484,"Report the interest of shareholders who, in the aggregate, own less
+than half the shares in a corporation. On the consolidated balance
+sheets of companies whose subsidiaries are not wholly owned, the
+minority interest is shown as a separate equity account or as a
+liability of indefinite term. Enter ‘NA’ if not applicable.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).
+Enter ‘NA’ if not applicable.",^.*$
+80,"Total Liabilities
+(TotalLiabilities)",CLCE2950,"Report the sum of current liabilities plus long- term debt plus
+other non-current liabilities (including deferred taxes, investment
+tax credit, and minority interest) of the entity identified in Field 2
+or Field 49.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+81,"Retained
+Earnings
+(RetainedEarnin
+gs)",CLCE3247,"Report the cumulative retained earnings of the entity identified in
+Field 2 or Field 49 less total dividend distributions to
+shareholders. Typically, it is the prior year’s retained earnings plus
+net income less distributions.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+82,"Capital
+Expenditures
+(CapitalExpendit
+ures)",CLCEM324,"Report the funds used to acquire a long-term asset resulting in
+depreciation deductions over the life of the acquired asset. Report
+gross of depreciation.
+Report data for the trailing twelve month (TTM) period ended on
+the date reported in Field 52.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).",^.*$
+83,"Special Purpose
+Entity Flag
+(SpecialPurpose
+EntityFlag)",,"Indicate ‘2’ (Yes) if the obligor (as identified in Field 2) is organized
+as a bankruptcy remote, special purpose entity (SPE) where the
+primary source of repayment depends on the performance of
+specified underlying assets. Relevant SPE obligors include, ABCP
+conduits, securitization trusts, and other structured variable
+interest entities established to purchase and finance assets through
+the tranching of risk. Entities which are trusts for the purpose of
+personal wealth management or Op Co/Prop Co structures should
+be reported as ‘1’ (No).","1. No
+2. Yes",^.*$
+84,DO NOT USE,,,,^.*$
+85,DO NOT USE,,,,^.*$
+86,"Lower of Cost or
+Market Flag
+(LOCOM)",,"Indicate whether the loan is accounted for under the fair value
+option or is held for sale and carried at the lower-of-cost-or-market
+(LOCOM). For loans not accounted for under the fair value option
+or not held for sale, report Option 3 (NA).","1. LOCOM
+2. FVO
+3. NA",^.*$
+87,"SNC Internal
+Credit ID
+(SNCInternalCre
+ditID)",,"If the credit facility is reported in the Shared National Credit
+collection and the reporting BHC or IHC or SLHC is the lead
+bank/agent (option 5 in Field 34), indicate the reporting BHC’s or
+IHC’s or SLHC’s Internal Credit ID as reported in the Shared
+National Credit collection for this credit facility as of the most
+recent filing date.
+If the credit facility is not reported in the Shared National Credit
+collection or the reporting BHC or IHC or SLHC is a participant in
+the Shared National Credit credit facility, report ‘NA’.","May not contain a carriage
+return, line feed, comma or any
+unprintable character.
+Report ‘NA’ if the credit facility
+is not reported in the Shared
+National Credit collection or if
+the reporting BHC or IHC or
+SLHC is not the agent.",^.*$
+88,"Probability of
+Default (PD)
+(ProbabilityOfDe
+fault)",,"For firms that are subject to the advanced approaches for
+regulatory capital, report the advanced IRB parameter estimate for
+the probability of default (PD) as defined in the Rule.
+For a defaulted obligor, report 100 percent (‘1).
+For firms that are not subject to the advanced approaches for
+regulatory capital, report the PD estimate that corresponds to the
+Obligor Internal Risk Rating reported in Field 10. If the reporting
+entity does not assign a PD estimate to the Obligor Internal Risk
+Rating, report ‘NA.’","Express as a decimal to 4
+decimal places, e.g., 0.05% is
+0.0005; 100% is 1. Use decimal
+format; do not use scientific
+notation.
+If the reporting entity does not
+assign a PD estimate to the
+Obligor Internal Risk Rating,
+report ‘NA.’",^.*$
+89,"Loss Given
+Default
+(LGD)",CLCOG081,"For firms that are subject to the advanced approaches for
+regulatory capital, report the advanced IRB LGD estimate at the
+loan level as defined in the Rule. If the credit facility includes
+multiple loans with different LGD assignments, report the dollar
+weighted average LGD that approximates the overall LGD on the
+committed balance of the credit facility.
+For firms that are not subject to the advanced approaches for
+regulatory capital, report the credit facility LGD estimate from the
+reporting entity’s credit risk management system. If an LGD
+estimate is not assigned, report ‘NA.’","Express as a decimal to 4
+decimal places, e.g., 0.05% is
+0.0005. Use decimal format; do
+not use scientific notation.
+If the reporting entity does not
+assign a credit facility LGD
+estimate, report ‘NA.’",^.*$
+90,"Exposure At
+Default
+(EAD)",,"For firms that are subject to the advanced approaches for
+regulatory capital, report the advanced IRB parameter estimate for
+the Exposure at Default (EAD). If the credit facility includes
+multiple loans with different EAD assignments, report the dollar
+weighted average EAD that approximates the overall EAD on the
+committed balance of the credit facility.
+For firms that are not subject to the advanced approaches for
+regulatory capital, report the credit facility EAD estimate from the
+reporting entity’s internal credit risk management system. If an
+EAD estimate is not assigned, report ‘NA.’","Rounded whole dollar amount
+with no cents, e.g.: 20000000
+Supply numeric values without
+any non-numeric formatting (no
+dollar sign, commas or
+decimal).
+If the reporting entity does not
+assign a credit facility EAD
+estimate, report ‘NA’.",^.*$
+91,"Renewal Date
+(RenewalDate)",,"If the credit facility has been renewed per the terms of the original
+loan agreement, re-priced, or has a change in the maturity date such
+that the Origination Date did not change, report the date on which
+the most recent renewal notification became effective. The Renewal
+Date is intended to capture maturity date extensions provided to
+the obligor by the BHC or IHC or SLHC and extension options at the
+sole discretion of the borrower. If a credit facility has been renewed
+as part of a major modification such that the contractual date of the
+original loan is changed, then such date would be reported in Field
+18 (Origination Date) and the BHC, IHC and SLHC should report
+9999-12-31 in this field. If the credit facility has not been renewed
+the BHC, IHC and SLHC should report 9999-12-31 in this field.","Must be in yyyy-mm-dd format,
+e.g.:
+2005-02-01
+1999-12-14",^.*$
+92,"Credit Facility
+Currency
+(CreditFacilityCu
+rrency)",,"Indicate the currency denomination for contractual principal and
+interest payments on the credit facility, using the relevant three-
+letter ISO 4217 currency code.
+If payments are legally permitted or required in more than one
+currency, indicate the predominant currency for contractual credit
+facility payments.
+For the avoidance of doubt, whether or not the currency
+denomination of the credit facility is USD (US Dollars), all amounts
+reported in other fields of this schedule must be in terms of US
+Dollars.
+The predominant currency should be the currency which
+represents the predominant share of the credit facility committed
+balance.","Standard ISO 4127 three-letter
+currency codes available at
+http://www.iso.org/iso/curren
+cy_codes",^.*$
+93,"Collateral
+Market Value
+(CollateralMark
+etValue)",,"For facilities which require ongoing or periodic valuation of the
+collateral, report the market value of the collateral as of the
+reporting date. If the market value of collateral is not updated in
+the reporting entity’s internal risk management systems as of the
+reporting date, report NA.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).
+Report ‘NA’ if the market value
+of collateral is not updated in
+the reporting entity’s internal
+risk management systems as of
+the reporting date.",^\d{4}-\d{2}-\d{2}$
+94,"Prepayment
+Penalty Flag
+(PrepaymentPen
+altyFlag)",,"Indicate whether the credit facility has a prepayment penalty clause
+in effect which may include yield maintenance. Indicate option 1
+(Yes) if the credit facility currently has a prepayment penalty clause
+in effect. If the facility had a prepayment penalty clause that has
+since expired, report option 2. If the facility does not have a
+prepayment penalty clause, report option 3.","1. Yes
+2. The prepayment penalty has
+expired
+3. No prepayment penalty
+clause",^.*$
+95,"Entity Industry
+Code
+(EntityIndustryC
+ode)",,"Report the numeric code that describes the primary business
+activity of the entity identified in Field 49 according to the North
+American Industry Classification System (NAICS). If the NAICS code
+is not available, provide either the Standard Industrial
+Classification (SIC), or Global Industry Classification Standard
+(GICS).
+If the entity identified in Field 49 is an individual, the industry
+code should be consistent with the industry in which the
+commercial purpose of the loan operates.
+If the business or individual operates in multiple industries, the
+BHC, IHC and SLHC should report the industry that best represents
+the commercial risk of the loan (i.e., the predominant industry).","Report 4 to 6 digit number. If
+this code is not available, then
+provide a SIC or GICS industry
+code.",^\d+$
+96,"Participation
+Interest
+(ParticipationInt
+erest)",,"For participated or syndicated credit facilities that have closed and
+settled, report the percentage of the total loan commitment held by
+the BHC or IHC or SLHC.
+If the credit facility is not participated or syndicated, report 1.
+If the credit facility is syndicated and reported as options 1, 2, or 3
+in Field 100, report NA.
+For fronting exposures, report 1.","Express as a decimal to 4
+decimal places, e.g., 0.05% is
+0.0005. Use decimal format; do
+not use scientific notation.
+Report NA if the credit facility is
+reported as options 1, 2, or 3 in
+Field 100.
+For fronting exposures, report 1.",^.*$
+97,"Leveraged Loan
+Flag
+(LeveragedLoan
+Flag)",,"Indicate ‘2’ (Yes) if the credit facility is defined as a leveraged loan
+per criteria in the reporting entity’s internal risk management
+framework developed pursuant to SR 13-3 (Interagency Guidance
+on Leveraged Lending).","1. No
+2. Yes",^.*$
+98,"Disposition Flag
+(DispositionFlag
+)",,"Report the disposition method for any credit facility that was
+disposed during the reporting quarter.
+If the BHC or IHC or SLHC is still pursuing payment of principal,
+interest or fees, report as option “0”. Rebookings/restructures
+where loan amounts are transferred or combined between
+obligations should be reported as either option 1 (Payoff) or option
+2 (Involuntary payoff) depending on the occurrence of default.
+0. Active - Report for all credit facilities required to be
+reported in this data collection and do not meet the
+definitions of options 1 through 8 as of the reporting date.
+1. Payoff – Report all instances where the credit facility has
+been paid in full by the borrower, or where an undrawn
+credit facility reaches maturity and is not renewed.
+2. Involuntary Payoff – Report all instances where the credit
+facility has been paid in full after the occurrence of default
+per the terms of the credit agreement.
+3. Involuntary Liquidation – Report all instances where the
+credit facility has been liquidated either through
+foreclosure proceedings or another settlement option
+resulting in incomplete repayment of principal. Include
+short-sales, charge-offs, as well as REO. This includes loans
+active in the quarter prior to the reporting quarter that
+were sold at a foreclosure sale and taken into REO in the
+reporting quarter. Also include all instances where credit
+has been resolved (i.e. no longer pursuing collection) but
+not through foreclosures, servicing transfers, or payments
+made by the obligor.","0. Active
+1. Payoff
+2. Involuntary Payoff
+3. Involuntary Liquidation
+4. Sold or fully participated
+5. Fully syndicated
+6. Below reporting
+threshold
+7. Transfer to another Y-14
+schedule
+8. Expired Commitment to
+Commit",^.*$
+,,,"4. Sold or fully participated – Report all instances where the
+loan has been sold or fully participated to another
+institution during the reporting quarter. For fully
+syndicated loans, report option 5 (Fully syndicated).
+5. Fully Syndicated – Report all instances where 100% of the
+commitment has been syndicated to other institutions
+during the reporting quarter.
+6. Below reporting threshold – Report all instances where the
+credit facility fell below the $1 million reporting threshold.
+7. Transfer to another Y-14 schedule. Indicate the schedule
+where the credit facility is now reported in Field 99 below.
+8. Expired Commitment to Commit",,^.*$
+99,"Disposition
+Schedule Shift
+(DispositionSche
+duleShift)",,"For credit facilities reported with option 7 (Transfer to another Y‐
+14 schedule) in field 98, indicate the Y‐14 report, schedule, and
+subschedule to which the credit facility shifted.
+The reported format should follow these examples:
+If the credit facility transferred to FR Y‐14Q Schedule H.2
+Commercial Real Estate, report “Q.H.2”.
+If the credit facility transferred to FR Y‐14M Schedule D.1 Domestic
+Credit Card Data Collection Data Dictionary, report “M.D.1”.","Report in the format using the
+examples below:
+If the credit facility transferred
+to FR Y‐14Q Schedule H.2
+Commercial Real Estate, report
+“Q.H.2”.
+If the credit facility transferred
+to FR Y‐14M Schedule D.1
+Domestic Credit Card Data
+Collection Data Dictionary,
+report “M.D.1”.",^.*$
+100,"Syndicated Loan
+Flag
+SyndicatedLoan
+Flag)",,"Report whether the syndicated loan commitment is single signed
+by the BHC or IHC or SLHC, counter signed by the borrower (dual
+signed), or closed but not yet settled, or closed and settled. Closed
+and settled refers to the final phase where loan documents are fully
+executed and binding with post‐closing selldown to all participants
+complete.
+Loans which have closed but are still pending execution of final
+documentation by all syndicate participants should be reported as
+option 3 (Closed but not settled).
+For loans that are not syndicated, indicate option 0 (NA).","0. NA
+1. Single‐signed
+2. Dual‐signed
+3. Closed but not settled
+4. Closed and settled",^.*$
+101,"Target Hold
+(TargetHold)",,"For loans in the syndicated loan pipeline (Options 1, 2 or 3 in Field
+100), report the percentage of the total commitment the BHC or IHC
+or SLHC
+intends to hold.
+If the credit facility is reported as option 0 (NA) or option 4 (closed
+and settled) in Field 100, report NA.","Express as a decimal to 4
+decimal places, e.g., 0.05% is
+0.0005. Use decimal format;
+do not use scientific notation.
+Report NA if the credit facility
+is reported as option 0 or 4 in
+Field 100.",^.*$
+102,"ASC326-20
+(ASC32620)",,"Report the allowance for credit losses per ASC 326-20.
+Provide at the credit facility level if available, otherwise report a
+pro-rated allocation from the collective (pool) basis.
+Provide if available at a credit facility level, otherwise a pro-rated
+allocation from the collective (pool) level to the loan level may be
+reported.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+such as dollar sign, commas or
+decimals.
+Should be 0 if there is no
+ASC326-20 Reserve for the
+loan.",^.*$
+103,"Purchased
+Credit
+Deteriorated
+Noncredit
+Discount
+(PCDNoncreditD
+iscount)",,"If the facility is a purchased credit-deteriorated (PCD) asset, report
+the noncredit discount (or premium) resulting from its acquisition
+(ASC 326-20-30-13). Provide at the credit facility level if available,
+otherwise report a pro-rated allocation from the collective (pool)
+basis.
+Leave blank if the facility is not considered a PCD asset.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+such as no dollar sign, commas
+or decimals.",^.*$
+104,"Current
+Maturity Date
+(CurrentMaturit
+yDate)",,"Report the maturity date as the last date upon which the funds must
+be repaid, exclusive of extension options.
+For demand loan, enter ‘9999-01-01’. For corporate loans in the
+syndicated pipeline, until the syndicated loan is reported as closed
+and settled (option4 in Field 100), report the estimated maturity
+date based on the tenor stated in the commitment letter.
+For commitments to commit which are not syndicated, report the
+estimated maturity date based on the tenor in the terms extended
+to the borrower.","Must be in yyyy- mm-dd format,
+e.g.:
+2005-02-01
+1999-12-14",^.*$
+105,"Committed
+Exposure Global
+Par Value",,"For held for sale loans and loans accounted for under a fair value
+option, report the total commitment amount as the amount the
+obligor is contractually allowed to borrow according to the credit
+agreement for the entire credit facility.
+If not held for sale or accounted for under a fair value option, report
+‘NA’.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).
+For negative values use a
+negative sign ‘-‘, not
+parentheses
+().
+If not held for sale or accounted
+for under a fair value option,
+report ‘NA’.",^.*$
+106,"Utilized
+Exposure Global
+Par Value",,"For held for sale loans and loans accounted for under a fair value
+option, report the outstanding funded exposure.
+If not held for sale or accounted for under a fair value option, report
+‘NA’.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).
+For negative values use a
+negative sign ‘-‘, not
+parentheses
+().
+If not held for sale or accounted
+for under a fair value option,
+report ‘NA’.",^.*$
+107,"Committed
+Exposure Global
+Fair Value",,"For held for sale loans and loans accounted for under a fair value
+option, report the fair value of the entire credit facility.
+If not held for sale or accounted for under a fair value option, report
+‘NA’.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).
+For negative values use a
+negative sign ‘-‘, not
+parentheses
+().
+If not held for sale or accounted
+for under a fair value option,
+report ‘NA’.",^.*$
+108,"Utilized
+Exposure Global
+Fair Value",,"For held for sale loans and loans accounted for under a fair value
+option, report the fair value of the outstanding funded exposure.
+If not held for sale or accounted for under a fair value option, report
+‘NA’.","Rounded whole dollar amount,
+e.g.: 20000000
+Supply numeric values without
+any non- numeric formatting
+(no dollar sign, commas or
+decimal).
+For negative values use a
+negative sign ‘-‘, not
+parentheses
+().
+If not held for sale or accounted
+for under a fair value option,
+report ‘NA’.",^.*$
+109,DO NOT USE,,,,^.*$
+110,DO NOT USE,,,,^.*$
+111,"Obligor LEI
+(ObligorLEI)",,"Report the Legal Entity Identifier (LEI) of the obligor identified in
+Field 4, if available. A LEI is a 20 character alphanumeric code that
+uniquely identifies legally distinct entities that engage in financial
+transactions. LEIs are issued by Local Operating Units (LOUs) of the
+Global LEI System. If LEI does not apply, enter ‘NA’.","Must be a valid 20 character
+alphanumeric LEI issued by
+a LOU of the Global LEI
+System, or ‘NA’.",^[A-Za-z0-9]+$
+112,"Primary Source
+of Repayment
+LEI (PSRLEI)",,"If the primary source of repayment is provided by an entity that is
+different from the obligor identified in Field 4, report the Legal
+Entity Identifier (LEI) of the entity identified in Field 50 if
+available. A LEI is a 20 character alphanumeric code that uniquely
+identifies legally distinct entities that engage in financial
+transactions. LEIs are issued by Local Operating Units (LOUs) of
+the Global LEI System. If LEI does not apply, enter ‘NA’.","Must be a valid 20 character
+alphanumeric LEI issued by a
+LOU of the Global LEI System,
+or ‘NA’.
+Leave blank if the entity is
+the same as the Obligor
+identified in Field 2.",^[A-Za-z0-9]+$
